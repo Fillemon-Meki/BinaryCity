@@ -10,7 +10,7 @@ $clientId = $_GET['client_id'];
 
 $unlinkQuery = "DELETE FROM client_contacts WHERE contact_id = '$contactId' AND client_id = '$clientId'";
 if ($conn->query($unlinkQuery) === TRUE) {
-    header("Location: client_form.php?client_code=" . $clientCode);
+      header("Location: contact_form.php?contact_id=" . $contactId);
 } else {
     echo json_encode(['success' => false, 'message' => 'Error unlinking client.']);
 }
